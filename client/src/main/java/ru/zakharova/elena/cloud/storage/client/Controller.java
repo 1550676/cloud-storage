@@ -58,7 +58,9 @@ public class Controller implements Initializable {
             Callback authOkCallback = this::showStoragePanel;
             Callback serverFilesRefreshCallback = this::refreshServerFilesTable;
             Callback clientsFilesRefreshCallback = this::btnRefreshClientFilesTable;
-            callbackList.addAll(List.of(authOkCallback, serverFilesRefreshCallback, clientsFilesRefreshCallback));
+            callbackList.add(authOkCallback);
+            callbackList.add(serverFilesRefreshCallback);
+            callbackList.add(clientsFilesRefreshCallback);
             CountDownLatch networkStarter = new CountDownLatch(1);
             new Thread(() -> Network.getInstance().startNetwork(networkStarter, callbackList)).start();
             networkStarter.await();
