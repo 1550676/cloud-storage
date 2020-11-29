@@ -1,14 +1,14 @@
-Клиент-серверное сетевое хранилище (без использования Java EE) - реализация на Netty.
+Client-server network storage (without using Java EE) - Netty implementation.
 
-Основные возможности:
-- Передача файлов (включая папки) байтовым протоколом: отправка файлов на сервер,
-скачивание файлов, просмотр файлов на сервере для каждого пользователя, удаление файлов локально/на сервере.
-- Файлы хранятся на сервере в папках с именами пользователей.
-- Аутентификация. Для хранения пользователей используем базу данных.
-- На клиенте есть простой графический интерфейс на JavaFX.
-- Древовидная структура внутри папки пользователя на сервере.
-- Логирование осуществляется в классе AuthHandler.
+Basic possibilities:
+- File transfer (including directories) by byte protocol: sending files to the server,
+downloading files, viewing files on the server for each user, deleting files locally/on the server.
+- Files are stored on the server in directories with user names.
+- Authentication. A database is used for storing users.
+- The client has a simple graphical interface in JavaFX.
+- Tree structure inside user's directory on the server.
+- Logging is performed in the Auth Handler class.
 
-Для теста:
-- логин l1
-- пароль p1
+For tests:
+- login l1
+- password p1
