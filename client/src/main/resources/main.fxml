@@ -75,11 +75,11 @@
                         <HBox>
                             <HBox>
                                 <TextField fx:id="clientPathField" editable="false" prefWidth="350" HBox.hgrow="ALWAYS"/>
-                                <Button text="Вверх" onAction="#btnClientPathUpAction" prefWidth="45.0"/>
+                                <Button text="Up" onAction="#btnClientPathUpAction" prefWidth="45.0"/>
                             </HBox>
                             <HBox>
                                 <TextField fx:id="serverPathField" editable="false" prefWidth="350" HBox.hgrow="ALWAYS"/>
-                                <Button text="Вверх" onAction="#btnServerPathUpAction" prefWidth="45.0"/>
+                                <Button text="Up" onAction="#btnServerPathUpAction" prefWidth="45.0"/>
                             </HBox>
                         </HBox>
                     </children>
