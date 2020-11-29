@@ -104,7 +104,7 @@ public class Controller implements Initializable {
         if ( deleteFileIfExist(filePath)) {
             btnRefreshClientFilesTable();
         } else {
-            GUIHelper.showError(new RuntimeException ("Не удалось удалить файл"));
+            GUIHelper.showError(new RuntimeException ("Failed to remove file"));
         }
     }
 

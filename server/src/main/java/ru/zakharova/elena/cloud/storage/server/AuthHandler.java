@@ -42,13 +42,13 @@ public class AuthHandler extends ChannelInboundHandlerAdapter {
 
         if (userDirectory == null) {
             Sender.sendCommand(ctx.channel(), Command.AUTH_ERR);
-            logger.debug("Неверный логин: " + login + " или пароль: " + password);
+            logger.debug("Invalid login: " + login + " or password: " + password);
             return;
         } else {
             Sender.sendCommand(ctx.channel(), Command.AUTH_OK);
             ctx.pipeline().addLast(new MainHandler(Paths.get("server", userDirectory)));
             ctx.pipeline().remove(this);
-            logger.debug("Пользователь : " + login + " успешно прошел авторизацию.");
+            logger.debug("User : " + login + " was authorised successful.");
         }
     }
 

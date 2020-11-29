@@ -47,11 +47,11 @@ public class GUIHelper {
         fileTypeColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getType().getName()));
         fileTypeColumn.setPrefWidth(30);
 
-        TableColumn<FileInfo, String> filenameColumn = new TableColumn<>("Имя файла");
+        TableColumn<FileInfo, String> filenameColumn = new TableColumn<>("File name");
         filenameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getFileName()));
         filenameColumn.setPrefWidth(240);
 
-        TableColumn<FileInfo, Long> fileSizeColumn = new TableColumn<>("Размер");
+        TableColumn<FileInfo, Long> fileSizeColumn = new TableColumn<>("Size");
         fileSizeColumn.setCellValueFactory(param -> new SimpleObjectProperty<>(param.getValue().getSize()));
         fileSizeColumn.setCellFactory(column -> new TableCell<FileInfo, Long>() {
             @Override

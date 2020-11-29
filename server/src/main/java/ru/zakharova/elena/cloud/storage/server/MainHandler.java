@@ -22,9 +22,9 @@ public class MainHandler extends ChannelInboundHandlerAdapter {
     }
 
     public enum State {
-        IDLE,                                               // стартовая позиция
-        FILE_NAME_LENGTH, FILE_NAME, FILE_LENGTH, FILE,     // для чтения директорий
-        DIR_NAME_LENGTH, DIR_NAME, FILE_TYPE;               // для чтения файлов
+        IDLE,                                               // start position
+        FILE_NAME_LENGTH, FILE_NAME, FILE_LENGTH, FILE,     // for directories reading
+        DIR_NAME_LENGTH, DIR_NAME, FILE_TYPE;               // for files reading
     }
 
     private State currentState = State.IDLE;
@@ -75,10 +75,10 @@ public class MainHandler extends ChannelInboundHandlerAdapter {
             currentState = State.DIR_NAME_LENGTH;
             directoryReading = true;
         } else if (readed == Command.SERVER_PATH_DOWN.getByteValue() ||
-                readed == Command.TRANSFER_FILE.getByteValue() ||           // прием файла
-                readed == Command.DELETE_FILE.getByteValue() ||             // удаление
-                readed == Command.DOWNLOAD_FILE.getByteValue()||             // удаление
-                readed == Command.DOWNLOAD_DIRECTORY.getByteValue()) {            // запрос на скачивание
+                readed == Command.TRANSFER_FILE.getByteValue() ||           // request for uploading
+                readed == Command.DELETE_FILE.getByteValue() ||             // request for deleting
+                readed == Command.DOWNLOAD_FILE.getByteValue()||            // request for file downloading
+                readed == Command.DOWNLOAD_DIRECTORY.getByteValue()) {      // request for directory downloading
             fileReading = true;
             currentState = State.FILE_NAME_LENGTH;
         } else {

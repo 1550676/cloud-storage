@@ -17,13 +17,13 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.zakharova.elena.cloud.storage.client.Controller">
     <children>
         <HBox fx:id="authPanel" alignment="CENTER" layoutX="201.0" layoutY="358.0">
-            <TextField fx:id="loginField" promptText="Логин" HBox.hgrow="ALWAYS" />
-            <PasswordField fx:id="passField" promptText="Пароль" HBox.hgrow="ALWAYS">
+            <TextField fx:id="loginField" promptText="Login" HBox.hgrow="ALWAYS" />
+            <PasswordField fx:id="passField" promptText="Password" HBox.hgrow="ALWAYS">
                 <HBox.margin>
                     <Insets left="5.0" />
                 </HBox.margin>
             </PasswordField>
-            <Button onAction="#sendAuth" text="Подключиться" HBox.hgrow="ALWAYS">
+            <Button onAction="#sendAuth" text="go" HBox.hgrow="ALWAYS">
                 <HBox.margin>
                     <Insets left="10.0" />
                 </HBox.margin>
@@ -36,11 +36,11 @@
             <bottom>
                 <HBox prefHeight="30.0" prefWidth="790.0" alignment="CENTER">
                     <children>
-                        <Button onAction="#btnSendFile" mnemonicParsing="false" prefHeight="30.0" prefWidth="197.0" text="Отправить файл" HBox.hgrow="ALWAYS" />
-                        <Button onAction="#btnClientFileDelete" mnemonicParsing="false" prefHeight="30.0" prefWidth="197.0" text="Удалить файл" HBox.hgrow="ALWAYS" />
+                        <Button onAction="#btnSendFile" mnemonicParsing="false" prefHeight="30.0" prefWidth="197.0" text="Upload file" HBox.hgrow="ALWAYS" />
+                        <Button onAction="#btnClientFileDelete" mnemonicParsing="false" prefHeight="30.0" prefWidth="197.0" text="Delete file" HBox.hgrow="ALWAYS" />
 
-                        <Button onAction="#btnDownloadFile" mnemonicParsing="false" prefHeight="30.0" prefWidth="197.0" text="Загрузить файл" HBox.hgrow="ALWAYS" />
-                        <Button onAction="#btnServerFileDelete" mnemonicParsing="false" prefHeight="30.0" prefWidth="197.0" text="Удалить файл" HBox.hgrow="ALWAYS" />
+                        <Button onAction="#btnDownloadFile" mnemonicParsing="false" prefHeight="30.0" prefWidth="197.0" text="Download file" HBox.hgrow="ALWAYS" />
+                        <Button onAction="#btnServerFileDelete" mnemonicParsing="false" prefHeight="30.0" prefWidth="197.0" text="Delete file" HBox.hgrow="ALWAYS" />
                     </children>
                 </HBox>
             </bottom>
@@ -60,12 +60,12 @@
 
                         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="790.0">
                             <children>
-                                <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="395.0" text="Локальное хранилище">
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="395.0" text="Local storage">
                                     <font>
                                         <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Label>
-                                <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="395.0" text="Серверное хранилище">
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="395.0" text="Server storage">
                                     <font>
                                         <Font name="System Bold" size="14.0" />
                                     </font>

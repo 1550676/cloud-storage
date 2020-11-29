@@ -22,10 +22,10 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     }
 
     public enum State {
-        IDLE,                                                                   // стартовая позиция
-        FILE_NAME_LENGTH, FILE_NAME, FILE_LENGTH, FILE,                         // для чтения файлов
-        DIR_NAME_LENGTH, DIR_NAME, FILE_TYPE_DIR,                               // для чтения директорий
-        LIST_SIZE, NAME_LENGTH_LIST, FILE_TYPE, NAME_LIST, FILE_LENGTH_LIST     // для чтения списка файлов
+        IDLE,                                                                   // start position
+        FILE_NAME_LENGTH, FILE_NAME, FILE_LENGTH, FILE,                         // for files reading
+        DIR_NAME_LENGTH, DIR_NAME, FILE_TYPE_DIR,                               // for directories reading
+        LIST_SIZE, NAME_LENGTH_LIST, FILE_TYPE, NAME_LIST, FILE_LENGTH_LIST     // for lists of files reading
     }
 
     private State currentState = State.IDLE;
@@ -81,10 +81,9 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
 
     private void readCommand(byte readed) {
         if (readed == Command.AUTH_OK.getByteValue()) {
-            System.out.println("Добро пожаловать!");
             callbackList.get(0).callback();
         } else if (readed == Command.AUTH_ERR.getByteValue()) {
-            GUIHelper.showError(new RuntimeException("Неверный логин или пароль"));
+            GUIHelper.showError(new RuntimeException("Invalid login or password"));
         } else if (readed == Command.SERVER_PATH_CURRENT.getByteValue() || readed == Command.SERVER_PATH_DOWN.getByteValue() ||
                 readed == Command.SERVER_PATH_UP.getByteValue()) {
             GUIHelper.serverFilesList.clear();
@@ -98,13 +97,13 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
             GUIHelper.serverFilesList.clear();
             callbackList.get(1).callback();
         } else if (readed == Command.FILE_DOES_NOT_EXIST.getByteValue()) {
-            GUIHelper.showError(new RuntimeException("Данный файл не существует"));
+            GUIHelper.showError(new RuntimeException("This file does not exist"));
         } else if (readed == Command.TRANSFER_FILE_ERR.getByteValue()) {
-            GUIHelper.showError(new RuntimeException("Не удалось отправить файл"));
+            GUIHelper.showError(new RuntimeException("Failed to upload file"));
         } else if (readed == Command.DELETE_FILE_ERR.getByteValue()) {
-            GUIHelper.showError(new RuntimeException("Не удалось удалить файл"));
+            GUIHelper.showError(new RuntimeException("Failed to remove file"));
         } else if (readed == Command.DOWNLOAD_FILE_ERR.getByteValue()) {
-            GUIHelper.showError(new RuntimeException("Не удалось скачать файл"));
+            GUIHelper.showError(new RuntimeException("Failed to download file"));
         } else if (readed == Command.TRANSFER_FILE.getByteValue()) {
             currentState = State.FILE_NAME_LENGTH;
             fileReading = true;
