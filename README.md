@@ -9,6 +9,6 @@ downloading files, viewing files on the server for each user, deleting files loc
 - Tree structure inside user's directory on the server.
 - Logging is performed in the Auth Handler class.
 
-For tests:
-- login l1
-- password p1
+For tests: 
+  login - l1
+  password - p1
