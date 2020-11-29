@@ -1,5 +1,5 @@
 # Project exclude paths
-/client/target/
-/common/target/
-/server/target/
-/.idea/
+*.class
+target/
+*.iml
+.idea/
