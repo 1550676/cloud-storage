@@ -1,6 +1,6 @@
 Client-server network storage (without using Java EE) - Netty implementation.
 
-Basic possibilities:
+Basic functionalities:
 - File transfer (including directories) by byte protocol: sending files to the server,
 downloading files, viewing files on the server for each user, deleting files locally/on the server.
 - Files are stored on the server in directories with user names.
