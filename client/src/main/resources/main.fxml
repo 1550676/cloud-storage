@@ -23,7 +23,7 @@
                     <Insets left="5.0" />
                 </HBox.margin>
             </PasswordField>
-            <Button onAction="#sendAuth" text="go" HBox.hgrow="ALWAYS">
+            <Button onAction="#sendAuth" text="Connection" HBox.hgrow="ALWAYS">
                 <HBox.margin>
                     <Insets left="10.0" />
                 </HBox.margin>
