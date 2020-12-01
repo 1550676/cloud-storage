@@ -7,7 +7,7 @@ downloading files, viewing files on the server for each user, deleting files loc
 - Authentication. A database is used for storing users.
 - The client has a simple graphical interface in JavaFX.
 - Tree structure inside user's directory on the server.
-- Logging is performed in the AuthHandler class.
+- Logging is performed only in the AuthHandler class.
 
 For tests: 
   login - l1
